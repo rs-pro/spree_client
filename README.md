@@ -63,6 +63,8 @@ SpreeClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
   # Configure a proc to get access tokens in lieu of the static access_token configuration
   config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
+  # Configure faraday connection
+  config.configure_faraday_connection { |connection| 'YOUR CONNECTION CONFIG PROC' }
 end
 
 api_instance = SpreeClient::AddressesApi.new
